@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #102238;
+    color: white;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+header {
+    background: #102238;
+    padding: 20px 0;
+    border-bottom: 2px solid #347cc3;
+    animation: slideIn 1s forwards;
+}
+.profile-header {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.profile-image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+.profile-name {
+    flex: 1;
+}
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #ffff66;
+}
+header p {
+    margin: 5px 0;
+}
+main {
+    padding: 20px 0;
+}
+main section {
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+main section:nth-child(odd) {
+    animation-delay: 0.5s;
+}
+main section:nth-child(even) {
+    animation-delay: 1s;
+}
+main section h2 {
+    color: #ffff66;
+    border-bottom: 2px solid #347cc3;
+    padding-bottom: 5px;
+}
+main section ul {
+    list-style: none;
+    padding: 0;
+}
+main section ul li {
+    margin: 10px 0;
+}
+.competencies ul {
+    list-style: none;
+    padding: 0;
+}
+.competencies ul li {
+    margin: 10px 0;
+}
+.bar {
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 10px;
+}
+.bar span {
+    display: block;
+    height: 100%;
+    background: #ffff66;
+}
+.skill-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+.skill-item i {
+    margin-right: 10px;
+    color: #ffff66;
+}
+.project-item {
+    background: #224261;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s, background 0.3s;
+}
+.project-item:hover {
+    transform: scale(1.05);
+    background: #3c6a9e;
+}
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .personal-info, .competencies {
+        width: 100%;
+    }
+}
